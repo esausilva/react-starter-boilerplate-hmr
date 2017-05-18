@@ -1,0 +1,53 @@
+{
+  "name": "react-starter-boilerplate-hmr",
+  "version": "1.0.0",
+  "description": "React Starter Boilerplate with Hot Module Replacement and Webpack 2",
+  "main": "index.js",
+  "author": "Esau Silva",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.config.development.js --open",
+    "prebuild": "rimraf dist",
+    "build": "cross-env NODE_ENV=production webpack -p --config webpack.config.production.js"
+  },
+  "dependencies": {
+    "react": "^15.5.4",
+    "react-dom": "^15.5.4",
+    "react-prop-types": "^0.4.0",
+    "semantic-ui-react": "^0.68.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-preset-env": "^1.4.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-1": "^6.24.1",
+    "cross-env": "^5.0.0",
+    "css-loader": "^0.28.1",
+    "extract-text-webpack-plugin": "^2.1.0",
+    "html-webpack-plugin": "^2.28.0",
+    "postcss-loader": "^2.0.5",
+    "react-hot-loader": "next",
+    "rimraf": "^2.6.1",
+    "style-loader": "^0.17.0",
+    "webpack": "^2.5.1",
+    "webpack-dev-server": "^2.4.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/esausilva/react-starter-boilerplate-hmr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/esausilva/react-starter-boilerplate-hmr/issues"
+  },
+  "keywords": [
+    "react",
+    "boilerplate",
+    "semantic ui",
+    "semantic ui react",
+    "webpack 2",
+    "webpack",
+    "hot module replacement",
+    "hmr"
+  ]
+}
