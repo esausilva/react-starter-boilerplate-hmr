@@ -6,7 +6,7 @@
   "author": "Esau Silva",
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --config webpack.config.development.js --open",
+    "start": "webpack-dev-server --config webpack.config.development.js",
     "prebuild": "rimraf dist",
     "build": "cross-env NODE_ENV=production webpack -p --config webpack.config.production.js"
   },
