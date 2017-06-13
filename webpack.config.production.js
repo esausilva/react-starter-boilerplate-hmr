@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: './src/index.js',
@@ -54,6 +55,9 @@ module.exports = {
       template: 'public/index.html', 
       favicon: 'public/favicon.ico' 
     }),
-    new ExtractTextPlugin('styles/styles.[hash].css')
+    new ExtractTextPlugin('styles/styles.[hash].css'),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'disabled'
+    })
   ]
 };

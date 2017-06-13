@@ -10,6 +10,8 @@
  - CSS Modules with SourceMap
  - Stage 1 Preset
  - Webpack 2
+ - [Webpack Bundle Analyzer](https://github.com/th0r/webpack-bundle-analyzer) 
+ 	- Disabled by default. To enable just enabled the plugin like so `new BundleAnalyzerPlugin({analyzerMode:'server'})`
  - Take a look at [package.json](https://github.com/esausilva/react-starter-boilerplate-hmr/blob/master/package.json)
  
 ### Usage

@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const port = 3000;
 
@@ -53,6 +54,9 @@ module.exports = {
     new HtmlWebpackPlugin({ 
       template: 'public/index.html', 
       favicon: 'public/favicon.ico' 
+    }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'disabled'
     })
   ],
   devServer: {
