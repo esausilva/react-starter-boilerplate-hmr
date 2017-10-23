@@ -2,7 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin;
 
 module.exports = {
   entry: './src/index.js',
@@ -14,30 +15,30 @@ module.exports = {
   devtool: 'source-map',
   module: {
     rules: [
-      { 
-        test: /\.(js)$/, 
-        exclude: /node_modules/, 
-        use: ['babel-loader'] 
+      {
+        test: /\.(js)$/,
+        exclude: /node_modules/,
+        use: ['babel-loader']
       },
-      { 
-        test: /\.css$/, 
-        use: ExtractTextPlugin.extract({ 
-                fallback: 'style-loader', 
-                use: [
-                  {
-                    loader: 'css-loader',
-                    options: {
-                      modules: true,
-                      importLoaders: 1,
-                      camelCase: true,
-                      sourceMap: true
-                    }
-                  },
-                  {
-                    loader: 'postcss-loader'
-                  }
-                ]
-              }) 
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                modules: true,
+                importLoaders: 1,
+                camelCase: true,
+                sourceMap: true
+              }
+            },
+            {
+              loader: 'postcss-loader'
+            }
+          ]
+        })
       }
     ]
   },
@@ -47,13 +48,13 @@ module.exports = {
         NODE_ENV: JSON.stringify('production')
       }
     }),
-    new webpack.optimize.UglifyJsPlugin({ 
-      sourceMap: true, 
-      comments: false 
+    new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true,
+      comments: false
     }),
-    new HtmlWebpackPlugin({ 
-      template: 'public/index.html', 
-      favicon: 'public/favicon.ico' 
+    new HtmlWebpackPlugin({
+      template: 'public/index.html',
+      favicon: 'public/favicon.ico'
     }),
     new ExtractTextPlugin('styles/styles.[hash].css'),
     new BundleAnalyzerPlugin({

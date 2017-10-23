@@ -1,7 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin;
 
 const port = 3000;
 
@@ -20,13 +21,13 @@ module.exports = {
   devtool: 'inline-source-map',
   module: {
     rules: [
-      { 
-        test: /\.(js)$/, 
-        exclude: /node_modules/, 
-        use: ['react-hot-loader/webpack', 'babel-loader'] 
+      {
+        test: /\.(js)$/,
+        exclude: /node_modules/,
+        use: ['react-hot-loader/webpack', 'babel-loader']
       },
-      { 
-        test: /\.css$/, 
+      {
+        test: /\.css$/,
         use: [
           {
             loader: 'style-loader'
@@ -43,7 +44,7 @@ module.exports = {
           {
             loader: 'postcss-loader'
           }
-        ] 
+        ]
       }
     ]
   },
@@ -51,9 +52,9 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
-    new HtmlWebpackPlugin({ 
-      template: 'public/index.html', 
-      favicon: 'public/favicon.ico' 
+    new HtmlWebpackPlugin({
+      template: 'public/index.html',
+      favicon: 'public/favicon.ico'
     }),
     new BundleAnalyzerPlugin({
       analyzerMode: 'disabled'
@@ -66,4 +67,4 @@ module.exports = {
     hot: true,
     open: true
   }
-}
+};
