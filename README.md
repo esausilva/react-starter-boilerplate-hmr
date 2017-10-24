@@ -1,6 +1,6 @@
 # react-starter-boilerplate-hmr
 
-> React Starter Boilerplate with Hot Module Replacement and Webpack 2
+> React Starter Boilerplate with Hot Module Replacement and Webpack 3
 
 ## Features
 
