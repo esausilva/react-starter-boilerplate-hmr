@@ -1,14 +1,16 @@
 {
   "name": "react-starter-boilerplate-hmr",
   "version": "1.0.0",
-  "description": "React Starter Boilerplate with Hot Module Replacement and Webpack 2",
+  "description":
+    "React starter boilerplate with Hot Module Replacement, React 16 and Webpack 3",
   "main": "index.js",
   "author": "Esau Silva",
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --config webpack.config.development.js",
     "prebuild": "rimraf dist",
-    "build": "cross-env NODE_ENV=production webpack -p --config webpack.config.production.js"
+    "build":
+      "cross-env NODE_ENV=production webpack -p --config webpack.config.production.js"
   },
   "dependencies": {
     "react": "^16.0.0",
@@ -43,10 +45,11 @@
   },
   "keywords": [
     "react",
+    "react 16",
     "boilerplate",
     "semantic ui",
     "semantic ui react",
-    "webpack 2",
+    "webpack 3",
     "webpack",
     "hot module replacement",
     "hmr"
