@@ -7,12 +7,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
 const port = 3000;
 
 module.exports = {
-  entry: [
-    'react-hot-loader/patch',
-    `webpack-dev-server/client?http://localhost:${port}`,
-    'webpack/hot/only-dev-server',
-    './src/index.js'
-  ],
+  entry: ['react-hot-loader/patch', './src/index.js'],
   output: {
     filename: 'bundle.[hash].js',
     path: path.resolve(__dirname, 'dist'),
@@ -24,7 +19,7 @@ module.exports = {
       {
         test: /\.(js)$/,
         exclude: /node_modules/,
-        use: ['react-hot-loader/webpack', 'babel-loader']
+        use: ['babel-loader']
       },
       {
         test: /\.css$/,
@@ -49,8 +44,8 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new HtmlWebpackPlugin({
       template: 'public/index.html',
