@@ -19,7 +19,7 @@ const Profile = () => {
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
-        <a href="https://twitter.com/JGeZau" target="_blank">
+        <a href="https://twitter.com/_esausilva" target="_blank">
           <Icon name="twitter" />
           Twitter
         </a>{' '}

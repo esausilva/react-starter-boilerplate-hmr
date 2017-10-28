@@ -1,29 +1,29 @@
 import React from 'react';
-import { Header, Container, Divider, Icon, Grid } from 'semantic-ui-react';
-import Features from './Features';
-import Profile from './Profile';
+import { Switch, BrowserRouter as Router, Route } from 'react-router-dom';
+import { Icon, Header } from 'semantic-ui-react';
 
-import { pullRight } from './app.css';
+import Home from './Home';
+import Layout from './Layout';
+
+const NoMatch = () => {
+  return (
+    <Layout>
+      <Icon name="minus circle" size="big" />
+      <strong>Page not found!</strong>
+    </Layout>
+  );
+};
 
 const App = () => {
   return (
-    <Container>
-      <Header as="h1">react-starter-boilerplate-hmr</Header>
-      <Grid stackable columns={2}>
-        <Grid.Row>
-          <Grid.Column>
-            <Features />
-          </Grid.Column>
-          <Grid.Column>
-            <Profile />
-          </Grid.Column>
-        </Grid.Row>
-      </Grid>
-      <Divider />
-      <p className={pullRight}>
-        Made with <Icon name="heart" color="red" /> by Esau Silva
-      </p>
-    </Container>
+    <Router>
+      <div>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route component={NoMatch} />
+        </Switch>
+      </div>
+    </Router>
   );
 };
 

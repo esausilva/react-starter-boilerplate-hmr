@@ -4,6 +4,7 @@ import { List } from 'semantic-ui-react';
 const Features = () => {
   const list = [
     'React 16',
+    'React Router 4',
     'Semantic UI as the CSS Framework',
     'Hot Module Replacement',
     'CSS Autoprefixer',
@@ -13,6 +14,7 @@ const Features = () => {
     '<a href="https://github.com/th0r/webpack-bundle-analyzer" target="_blank">Webpack Bundle Analyzer</a>. (Disabled by default)',
     "Take a look at <a href='https://github.com/esausilva/react-starter-boilerplate-hmr/blob/master/package.json' target='_blank'>package.json</a>"
   ];
+
   return (
     <List>
       {list.map((item, idx) => (
