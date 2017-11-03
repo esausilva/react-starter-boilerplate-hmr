@@ -12,6 +12,7 @@
  - CSS Modules with SourceMap
  - Stage 1 Preset
  - Webpack 3
+ - Code splitting by Route and Vendor
  - [Webpack Bundle Analyzer](https://github.com/th0r/webpack-bundle-analyzer) 
  	- Disabled by default. To enable, in webpack config then plugins, change `BundleAnalyzerPlugin` like so `new BundleAnalyzerPlugin({analyzerMode:'server'})`
  - Take a look at [package.json](https://github.com/esausilva/react-starter-boilerplate-hmr/blob/master/package.json)
