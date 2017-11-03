@@ -1,16 +1,21 @@
 import React from 'react';
 import { Switch, BrowserRouter as Router, Route } from 'react-router-dom';
-import { Icon, Header } from 'semantic-ui-react';
 
-import Home from './Home';
-import Layout from './Layout';
+import AsyncBundle from './AsyncBundle';
 
-const NoMatch = () => {
+const AsyncHome = props => {
   return (
-    <Layout>
-      <Icon name="minus circle" size="big" />
-      <strong>Page not found!</strong>
-    </Layout>
+    <AsyncBundle load={() => import('./Home')}>
+      {Home => <Home {...props} />}
+    </AsyncBundle>
+  );
+};
+
+const AsyncNoMatch = props => {
+  return (
+    <AsyncBundle load={() => import('./NoMatch')}>
+      {NoMatch => <NoMatch {...props} />}
+    </AsyncBundle>
   );
 };
 
@@ -19,8 +24,8 @@ const App = () => {
     <Router>
       <div>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route component={NoMatch} />
+          <Route exact path="/" component={AsyncHome} />
+          <Route component={AsyncNoMatch} />
         </Switch>
       </div>
     </Router>
