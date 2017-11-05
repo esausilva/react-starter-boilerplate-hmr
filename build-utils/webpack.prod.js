@@ -1,28 +1,18 @@
-const path = require('path');
-const webpack = require('webpack');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
-  .BundleAnalyzerPlugin;
+const commonPaths = require('./common-paths');
 
-module.exports = {
+const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+
+const config = {
   entry: {
-    vendor: ['semantic-ui-react'],
-    app: './src/index.js'
+    app: [`${commonPaths.appEntry}/index.js`]
   },
   output: {
-    filename: 'static/[name].[hash].js',
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/'
+    filename: 'static/[name].[hash].js'
   },
   devtool: 'source-map',
   module: {
     rules: [
-      {
-        test: /\.(js)$/,
-        exclude: /node_modules/,
-        use: ['babel-loader']
-      },
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
@@ -55,17 +45,8 @@ module.exports = {
       sourceMap: true,
       comments: false
     }),
-    new HtmlWebpackPlugin({
-      template: 'public/index.html',
-      favicon: 'public/favicon.ico'
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: ['vendor'],
-      minChunks: Infinity
-    }),
-    new ExtractTextPlugin('styles/styles.[hash].css'),
-    new BundleAnalyzerPlugin({
-      analyzerMode: 'disabled'
-    })
+    new ExtractTextPlugin('styles/styles.[hash].css')
   ]
 };
+
+module.exports = config;
