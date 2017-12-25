@@ -12,7 +12,7 @@ const Features = () => {
     'Stage 1 Preset',
     'Webpack 3',
     'Code splitting by Route and Vendor',
-    '<a href="https://github.com/th0r/webpack-bundle-analyzer" target="_blank">Webpack Bundle Analyzer</a>. (Disabled by default)',
+    '<a href="https://github.com/th0r/webpack-bundle-analyzer" target="_blank">Webpack Bundle Analyzer</a>',
     "Take a look at <a href='https://github.com/esausilva/react-starter-boilerplate-hmr/blob/master/package.json' target='_blank'>package.json</a>"
   ];
 
