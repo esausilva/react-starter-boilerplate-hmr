@@ -1,23 +1,18 @@
 import React from 'react';
 import { Switch, BrowserRouter as Router, Route } from 'react-router-dom';
+import Loadable from 'react-loadable';
 
-import AsyncBundle from './AsyncBundle';
+import Loading from './Loading';
 
-const AsyncHome = props => {
-  return (
-    <AsyncBundle load={() => import('./Home')}>
-      {Home => <Home {...props} />}
-    </AsyncBundle>
-  );
-};
+const AsyncHome = Loadable({
+  loader: () => import('./Home'),
+  loading: Loading
+});
 
-const AsyncNoMatch = props => {
-  return (
-    <AsyncBundle load={() => import('./NoMatch')}>
-      {NoMatch => <NoMatch {...props} />}
-    </AsyncBundle>
-  );
-};
+const AsyncNoMatch = Loadable({
+  loader: () => import('./NoMatch'),
+  loading: Loading
+});
 
 const App = () => {
   return (
