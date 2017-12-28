@@ -1,5 +1,6 @@
 .pull-right {
-  float: right;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .h1 {

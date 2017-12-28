@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Grid } from 'semantic-ui-react';
 
 import Layout from './Layout';
@@ -12,6 +13,7 @@ const Home = () => {
         <Grid.Row>
           <Grid.Column>
             <Features />
+            <Link to="/dynamic">Navigate to Dynamic Page</Link>
           </Grid.Column>
           <Grid.Column>
             <Profile />
