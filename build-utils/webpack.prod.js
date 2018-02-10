@@ -5,6 +5,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const config = {
+  mode: 'production',
   entry: {
     app: [`${commonPaths.appEntry}/index.js`]
   },
@@ -46,19 +47,14 @@ const config = {
     ]
   },
   plugins: [
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production')
-      }
-    }),
-    new UglifyJsPlugin({
-      sourceMap: true,
-      uglifyOptions: {
-        output: {
-          comments: false
-        }
-      }
-    }),
+    // new UglifyJsPlugin({
+    //   sourceMap: true,
+    //   uglifyOptions: {
+    //     output: {
+    //       comments: false
+    //     }
+    //   }
+    // }),
     new ExtractTextPlugin({
       filename: 'styles/styles.[contenthash].css',
       allChunks: true

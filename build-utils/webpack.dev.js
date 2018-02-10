@@ -5,6 +5,7 @@ const webpack = require('webpack');
 const port = process.env.PORT || 3000;
 
 const config = {
+  mode: 'development',
   entry: {
     app: ['react-hot-loader/patch', `${commonPaths.appEntry}/index.js`]
   },
@@ -32,11 +33,7 @@ const config = {
       }
     ]
   },
-  plugins: [
-    new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
-  ],
+  plugins: [new webpack.HotModuleReplacementPlugin()],
   devServer: {
     host: 'localhost',
     port: port,
