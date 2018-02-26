@@ -2,7 +2,6 @@ const commonPaths = require('./common-paths');
 
 const webpack = require('webpack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 const config = {
   mode: 'production',
@@ -47,14 +46,6 @@ const config = {
     ]
   },
   plugins: [
-    // new UglifyJsPlugin({
-    //   sourceMap: true,
-    //   uglifyOptions: {
-    //     output: {
-    //       comments: false
-    //     }
-    //   }
-    // }),
     new ExtractTextPlugin({
       filename: 'styles/styles.[contenthash].css',
       allChunks: true

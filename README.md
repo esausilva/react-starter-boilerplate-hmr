@@ -1,6 +1,6 @@
 # react-starter-boilerplate-hmr
 
-> React Starter Boilerplate with Hot Module Replacement and Webpack 3
+> React Starter Boilerplate with Hot Module Replacement and Webpack 4
 
 ## Features
 
@@ -11,7 +11,7 @@
 * CSS Autoprefixer
 * CSS Modules with SourceMap
 * Stage 1 Preset
-* Webpack 3
+* Webpack 4
 * Code splitting by Route and Vendor
 * [Webpack Bundle Analyzer](https://github.com/th0r/webpack-bundle-analyzer)
 * Take a look at [package.json](https://github.com/esausilva/react-starter-boilerplate-hmr/blob/master/package.json)
