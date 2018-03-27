@@ -47,7 +47,7 @@ const config = {
   },
   plugins: [
     new ExtractTextPlugin({
-      filename: 'styles/styles.[contenthash].css',
+      filename: 'styles/styles.[hash].css',
       allChunks: true
     })
   ]

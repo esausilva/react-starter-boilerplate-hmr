@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000;
 const config = {
   mode: 'development',
   entry: {
-    app: ['react-hot-loader/patch', `${commonPaths.appEntry}/index.js`]
+    app: `${commonPaths.appEntry}/index.js`
   },
   output: {
     filename: '[name].[hash].js'
