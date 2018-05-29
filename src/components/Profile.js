@@ -14,8 +14,8 @@ const Profile = () => {
         />
         <Card.Header>Esau Silva</Card.Header>
         <Card.Description>
-          Full Stack Software Engineer working with Microsoft technologies,
-          ReactJS is awesome and avid Brazilian Jiu-Jitsu practitioner.
+          Full Stack Software Engineer and avid Brazilian Jiu-Jitsu
+          practitioner.
         </Card.Description>
       </Card.Content>
       <Card.Content extra>
