@@ -7,9 +7,7 @@ const addons = (/* string | string[] */ addonsArg) => {
   let addons = [...[addonsArg]] // Normalize array of addons (flatten)
     .filter(Boolean); // If addons is undefined, filter it out
 
-  return addons.map(addonName =>
-    require(`./build-utils/addons/webpack.${addonName}.js`)
-  );
+  return addons.map(addonName => require(`./build-utils/addons/webpack.${addonName}.js`));
 };
 
 module.exports = env => {
