@@ -7,10 +7,10 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack-dev-server --env.env=dev",
-    "dev:bundleanalyzer": "yarn dev --env.addons=bundleanalyzer",
+    "dev:bundleanalyzer": "yarn dev -- --env.addons=bundleanalyzer",
     "prebuild": "rimraf dist",
     "build": "cross-env NODE_ENV=production webpack -p --env.env=prod",
-    "build:bundleanalyzer": "yarn build --env.addons=bundleanalyzer"
+    "build:bundleanalyzer": "yarn build -- --env.addons=bundleanalyzer"
   },
   "dependencies": {
     "react": "^16.4.0",
