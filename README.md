@@ -4,17 +4,17 @@
 
 ## Features
 
-* React 16
-* React Router 4
-* Semantic UI as the CSS Framework
-* Hot Module Replacement
-* CSS Autoprefixer
-* CSS Modules with SourceMap
-* Stage 1 Preset
-* Webpack 4
-* Code splitting by Route and Vendor
-* [Webpack Bundle Analyzer](https://github.com/th0r/webpack-bundle-analyzer)
-* Take a look at [package.json](https://github.com/esausilva/react-starter-boilerplate-hmr/blob/master/package.json)
+- React 16
+- React Router 4
+- Semantic UI as the CSS Framework
+- Hot Module Replacement
+- CSS Autoprefixer
+- CSS Modules with SourceMap
+- Stage 1 Preset
+- Webpack 4
+- Code splitting by Route and Vendor
+- [Webpack Bundle Analyzer](https://github.com/th0r/webpack-bundle-analyzer)
+- Take a look at [package.json](https://github.com/esausilva/react-starter-boilerplate-hmr/blob/master/package.json)
 
 ### Usage
 
@@ -56,7 +56,7 @@ $ yarn build:bundleanalyzer
 
 ## Tutorial
 
-Visit my blog entry where I go step-by-step on how to build this boilerplate from scratch [https://esausilva.com/2018/01/13/learn-webpack-for-react/](https://esausilva.com/2018/01/13/learn-webpack-for-react/)
+Visit my [blog entry](https://medium.freecodecamp.org/learn-webpack-for-react-a36d4cac5060) where I go step-by-step on how to build this boilerplate from scratch.
 
 ## Giving Back
 
