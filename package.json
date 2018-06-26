@@ -13,11 +13,11 @@
     "build:bundleanalyzer": "yarn build -- --env.addons=bundleanalyzer"
   },
   "dependencies": {
+    "prop-types": "^15.6.2",
     "react": "^16.4.0",
     "react-delay-render": "^0.1.2",
     "react-dom": "^16.4.0",
     "react-imported-component": "^1.0.4",
-    "react-prop-types": "^0.4.0",
     "react-router-dom": "^4.2.2",
     "semantic-ui-react": "^0.75.1"
   },
