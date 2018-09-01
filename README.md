@@ -10,7 +10,8 @@
 - Hot Module Replacement
 - CSS Autoprefixer
 - CSS Modules with SourceMap
-- Stage 1 Preset
+- @babel/plugin-proposal-class-properties
+- @babel/plugin-syntax-dynamic-import
 - Webpack 4
 - Code splitting by Route and Vendor
 - [Webpack Bundle Analyzer](https://github.com/th0r/webpack-bundle-analyzer)
