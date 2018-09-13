@@ -4,9 +4,9 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
-  entry: {
-    vendor: ['semantic-ui-react']
-  },
+  // entry: {
+  //   vendor: []
+  // },
   output: {
     path: commonPaths.outputPath,
     publicPath: '/'

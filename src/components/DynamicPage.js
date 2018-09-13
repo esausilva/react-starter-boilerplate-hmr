@@ -1,13 +1,14 @@
 import React from 'react';
-import { Header } from 'semantic-ui-react';
 
 import Layout from './Layout';
-
+let a = { b: 'mirek', c: { d: 'as' } }
+let z = a ?.c ?.d || 'def';
+console.log('z', z);;
 const DynamicPage = () => {
   return (
     <Layout>
-      <Header as="h2">Dynamic Page</Header>
-      <p>This page was loaded asynchronously!!!</p>
+      <h2>Dynamic Page </h2>
+      <p>This page was loaded asynchronously!!! </p>
     </Layout>
   );
 };
