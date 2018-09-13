@@ -9,7 +9,8 @@ const config = {
     app: [`${commonPaths.appEntry}/index.js`]
   },
   output: {
-    filename: 'static/[name].[hash].js'
+    filename: 'static/[name].[hash].js',
+    publicPath: './'
   },
   devtool: 'source-map',
   module: {
@@ -25,7 +26,8 @@ const config = {
                 modules: true,
                 importLoaders: 1,
                 camelCase: true,
-                sourceMap: true
+                sourceMap: true,
+                localIdentName: '[name]__[local]___[hash:base64:5]'
               }
             },
             {

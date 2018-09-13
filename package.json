@@ -7,10 +7,10 @@
   "license": "MIT",
   "scripts": {
     "dev": "webpack-dev-server --env.env=dev",
-    "dev:bundleanalyzer": "yarn dev -- --env.addons=bundleanalyzer",
+    "dev:bundleanalyzer": "npm run dev -- --env.addons=bundleanalyzer",
     "prebuild": "rimraf dist",
     "build": "cross-env NODE_ENV=production webpack -p --env.env=prod",
-    "build:bundleanalyzer": "yarn build -- --env.addons=bundleanalyzer",
+    "build:bundleanalyzer": "npm run build -- --env.addons=bundleanalyzer",
     "test": "karma start --single-run=false --auto-watch --debug --browsers  Chrome  karma.conf.js "
   },
   "dependencies": {
