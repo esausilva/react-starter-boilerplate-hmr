@@ -2,16 +2,7 @@ import chai from 'chai'
 import React from 'react'
 import { render } from 'react-dom';
 import { shallow } from 'enzyme';
-
-class Hello extends React.Component {
-    render() {
-        return (
-            <div>
-                <h1>Hello world</h1>
-            </div>
-        );
-    }
-}
+import Hello from './components/Hello';
 
 describe("<Hello/>", () => {
     "use strict";
