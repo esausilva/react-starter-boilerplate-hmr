@@ -40,7 +40,16 @@ const config = {
     port: port,
     historyApiFallback: true,
     hot: true,
-    open: true
+    // reload: true,
+    open: false,
+    stats: {
+      timings: true,
+      moduleTrace: true,
+      modules: false,
+      assets: false,
+      entrypoints: false,
+      cachedAssets: false,
+    }
   }
 };
 
