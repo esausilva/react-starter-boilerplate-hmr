@@ -3,7 +3,7 @@ const chalk = require('chalk');
 const net = require('net')
 const HOST = '192.168.8.107'
 const PORT = 55443;
-const REFRESH_TIME = 6000;
+const REFRESH_TIME = 60000;
 const JOBS_TO_MONITOR = ['next-www-ui', 'next-www', 'next-www-wro'];
 
 const UNSTABLE = 'UNSTABLE';
@@ -58,7 +58,7 @@ function handleStatus(currentStatus) {
 setInterval(function () {
     let date = new Date();
     let current_hour = date.getHours();
-    if (!(current_hour > 7 && current_hour < 16)) {
+    if (!(current_hour >= 7 && current_hour <= 16)) {
         bulb.turnOff()
     } else {
         bulb.turnOn();
