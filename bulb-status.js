@@ -160,6 +160,7 @@ let bulb = (function () {
     }
     function turnOff() {
         if (bulbIsOn || bulbIsOn === undefined) {
+		bulbIsOn = true;
             executeCommand(powerCommand(false));
             bulbIsOn = false;
             console.log(chalk.yellow('Change bulb to turnOff'));
