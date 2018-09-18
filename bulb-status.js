@@ -159,14 +159,14 @@ let bulb = (function () {
         return String.fromCharCode.apply(null, new Uint8Array(buf));
     }
     function turnOff() {
-        if (bulbIsOn) {
+        if (bulbIsOn || bulbIsOn === undefined) {
             executeCommand(powerCommand(false));
             bulbIsOn = false;
             console.log(chalk.yellow('Change bulb to turnOff'));
         }
     }
     function turnOn() {
-        if (!bulbIsOn) {
+        if (bulbIsOn || bulbIsOn === undefined) {
             bulbIsOn = true;
             executeCommand(powerCommand(true));
             console.log(chalk.yellow('Change bulb to turOn'));
