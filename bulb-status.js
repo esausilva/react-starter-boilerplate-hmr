@@ -1,10 +1,10 @@
 const rp = require('request-promise');
 const chalk = require('chalk');
-const net = require('net')
-const HOST = '192.168.8.107'
+const net = require('net');
+const HOST = '192.168.71.96';
 const PORT = 55443;
 const REFRESH_TIME = 60000;
-const JOBS_TO_MONITOR = ['next-www-ui', 'next-www', 'next-www-wro'];
+const JOBS_TO_MONITOR = ['next-www-ui', 'next-www', 'next-www-wro', '~2_CRM_PgSQL'];
 
 const UNSTABLE = 'UNSTABLE';
 const SUCCESS = 'SUCCESS';
@@ -12,6 +12,7 @@ const FAILURE = 'FAILURE';
 const IN_PROGRESS = null;
 const ALL_STATES = [SUCCESS, UNSTABLE, FAILURE, IN_PROGRESS];
 const DEMO = false;
+
 
 function request(jobName) {
     return rp(`http://strumyk-next-build/jenkins/trunk/job/${jobName}/lastBuild/api/json`, { timeout: 5000 });
@@ -27,7 +28,7 @@ async function checkJobsStatus() {
     }
 
     if (arrayOfStatuses.includes(IN_PROGRESS)) {
-        handleStatus(IN_PROGRESS);
+		handleStatus(IN_PROGRESS);
         return;
     }
     if (arrayOfStatuses.includes(FAILURE)) {
@@ -71,13 +72,13 @@ setInterval(function () {
 let bulb = (function () {
     function prepareBulbCommand(status) {
         if (status === SUCCESS) {
-            return colorCommand(33, 145, 18);
+            return colorCommand(33, 80, 18);
         }
         if (status === FAILURE) {
             return colorCommand(255);
         }
         if (status === UNSTABLE) {
-            return colorCommand(242, 161, 27);
+            return colorCommand(221, 141, 27);
         }
         return flashCommand(12, 0, 255);
     }
@@ -116,13 +117,19 @@ let bulb = (function () {
     let bulbIsOn;
     function executeCommand(command) {
         if (bulbIsOn) {
-            client.write(command);
+			try{
+				client.write(command);
+			}catch(e){
+				connect();
+				client.write(command);
+			}
             console.log('Sending', command);
         }
     }
 
-    const client = new net.Socket()
+    let client;
     function connnect() {
+		client = new net.Socket()
         client.connect(PORT, HOST);
         client.once('connect', function () {
             console.log('CONNECTED TO: ' + HOST + ':' + PORT)
