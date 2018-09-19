@@ -3,7 +3,7 @@ const chalk = require('chalk');
 const net = require('net');
 const HOST = '192.168.71.96';
 const PORT = 55443;
-const REFRESH_TIME = 60000;
+const REFRESH_TIME = 60000;;
 const JOBS_TO_MONITOR = ['next-www-ui', 'next-www', 'next-www-wro', '~2_CRM_PgSQL'];
 
 const UNSTABLE = 'UNSTABLE';
@@ -160,14 +160,14 @@ let bulb = (function () {
     }
     function turnOff() {
         if (bulbIsOn || bulbIsOn === undefined) {
-		bulbIsOn = true;
+			bulbIsOn = true;
             executeCommand(powerCommand(false));
             bulbIsOn = false;
             console.log(chalk.yellow('Change bulb to turnOff'));
         }
     }
     function turnOn() {
-        if (bulbIsOn || bulbIsOn === undefined) {
+        if (!bulbIsOn || bulbIsOn === undefined) {
             bulbIsOn = true;
             executeCommand(powerCommand(true));
             console.log(chalk.yellow('Change bulb to turOn'));
