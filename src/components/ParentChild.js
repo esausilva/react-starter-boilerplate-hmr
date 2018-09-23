@@ -43,8 +43,8 @@ let inner = ({ name }) => {
     return (<div>inner for child b= {name}</div>);
 };
 export class Parent extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = { a: { i: 0 }, b: { i: 0 }, lastKey: 'a' }
         this.ha = this.handle.bind(this);
     }

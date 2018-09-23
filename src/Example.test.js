@@ -1,8 +1,9 @@
 import chai from 'chai'
 import React from 'react'
-import { render } from 'react-dom';
-import { shallow } from 'enzyme';
+import ReactDOM from 'react-dom';
+import { shallow, render, mount } from 'enzyme';
 import Hello from './components/Hello';
+import { Parent, MChild } from './components/ParentChild';
 
 describe("<Hello/>", () => {
     "use strict";
@@ -12,3 +13,55 @@ describe("<Hello/>", () => {
         expect(wrapper.find('h1')).to.have.length(1);
     });
 })
+describe('enzyme', function () {
+    it('renders without crashing parent', () => {
+        const div = $("#workspace")[0];
+        ReactDOM.render(<Parent />, div);
+        ReactDOM.unmountComponentAtNode(div);
+    });
+
+    it('renders without crashing child', () => {
+        let handler = () => { };
+        const div = $("#workspace")[0];
+        ReactDOM.render(<MChild a={{}} handler={handler} />, div);
+        ReactDOM.unmountComponentAtNode(div);
+    });
+    it('renders MCHild and call handler', () => {
+        let handler = () => { };
+        let html = render(<MChild a={{ i: 0 }} handler={handler} />);
+
+        expect(html.text()).to.contains('"i":0');
+
+        html = render(<MChild a={{ i: 1 }} handler={handler} />);
+
+        expect(html.text()).to.contains('"i":1');
+    });
+
+    it('renders Parent and call handler', async () => {
+        let wrapper = mount(<Parent />);
+        const instance = wrapper.instance();
+
+        expect(instance.state.a.i).to.be.eq(0);
+        expect(wrapper.text()).to.contains('"i":0');
+
+        let buttons = wrapper.find('button');
+        buttons.at(0).simulate('click');
+        await wait();
+        buttons.at(1).simulate('click');
+        await wait();
+
+        // @ts-ignore
+        expect(instance.state.a.i).to.be.eq(1);
+        // @ts-ignore
+        expect(wrapper.text()).to.contains('"i":1');
+    });
+
+})
+
+function wait() {
+    return new Promise((r, re) => {
+        setTimeout(function () {
+            r();
+        }, 300)
+    })
+}

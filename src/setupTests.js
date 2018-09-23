@@ -7,10 +7,10 @@ import 'babel-polyfill';
 configure({ adapter: new Adapter() });
 global.expect = chai.expect
 beforeEach(function () {
-    $(document.body).append('<div id="workspace">a</div>')
+    $(document.body).append('<div id="workspaceWrapper"><div id="workspace"></div></div>')
 })
 afterEach(function () {
-    $("#workspace").empty();
+    $("#workspaceWrapper").empty();
 })
 document.write('<script src="/socket.io/socket.io.js"></script>');
 document.write('<script>(function () { ' +
