@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom';
 import { shallow, render, mount } from 'enzyme';
 import Hello from './components/Hello';
 import { Parent, MChild } from './components/ParentChild';
+import sinon from 'sinon';
 
 describe("<Hello/>", () => {
     "use strict";
@@ -14,6 +15,15 @@ describe("<Hello/>", () => {
     });
 })
 describe('enzyme', function () {
+    let sandbox = sinon.createSandbox();
+    beforeEach(function () {
+        sandbox = sinon.createSandbox();
+    });
+
+    afterEach(function () {
+        // completely restore all fakes created through the sandbox
+        sandbox.restore();
+    });
     it('renders without crashing parent', () => {
         const div = $("#workspace")[0];
         ReactDOM.render(<Parent />, div);
@@ -35,6 +45,17 @@ describe('enzyme', function () {
         html = render(<MChild a={{ i: 1 }} handler={handler} />);
 
         expect(html.text()).to.contains('"i":1');
+    });
+    it('renders MCHild and call handler - sinon', () => {
+        let handler = sandbox.spy();
+        let model = { i: 0 }
+        let html = ReactDOM.render(<MChild model={model} handler={handler} />, $("#workspace")[0]);
+
+        const newLocal = $("#workspace").find("button");
+        $(newLocal).click();
+
+        expect(handler).to.calledWith('model');;
+        expect(model.i).to.eq(1);
     });
 
     it('renders Parent and call handler', async () => {

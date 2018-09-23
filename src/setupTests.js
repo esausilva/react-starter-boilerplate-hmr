@@ -3,6 +3,9 @@ require('source-map-support').install();
 import { configure } from 'enzyme'
 import * as Adapter from 'enzyme-adapter-react-16';
 import 'babel-polyfill';
+import sinonChai from "sinon-chai";
+chai.should();
+chai.use(sinonChai);
 
 configure({ adapter: new Adapter() });
 global.expect = chai.expect
