@@ -1,6 +1,5 @@
 import React from 'react';
 import importedComponent from 'react-imported-component';
-
 import Loading from './Loading';
 import NoMatch from './NoMatch';
 import { Parent } from './ParentChild';

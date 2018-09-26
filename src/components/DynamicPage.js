@@ -1,4 +1,5 @@
 import React from 'react';
+import Form from './Form';
 
 import Layout from './Layout';
 let a = { b: 'mirek', c: { d: 'as' } }
@@ -9,6 +10,7 @@ const DynamicPage = () => {
     <Layout>
       <h2>Dynamic Page </h2>
       <p>This page was loaded asynchronously!!! </p>
+      <Form />
     </Layout>
   );
 };
