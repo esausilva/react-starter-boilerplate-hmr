@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
   entry: {
-    vendor: ['react', 'react-dom', 'react-imported-component', 'react-delay-render']
+    vendor: ['react', 'react-dom', 'react-imported-component', 'react-delay-render', 'mdbreact']
   },
   output: {
     path: commonPaths.outputPath,
