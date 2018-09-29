@@ -3,6 +3,7 @@ import importedComponent from 'react-imported-component';
 import Loading from './Loading';
 import NoMatch from './NoMatch';
 import { Parent } from './ParentChild';
+import Msg from './Msg';
 
 const AsyncDynamicPAge = importedComponent(
   () => import(/* webpackChunkName:'DynamicPage' */ './DynamicPage'),
@@ -22,6 +23,7 @@ const AsyncNoMatch = importedComponent(
 const App = () => {
   return (
     <div>
+      <Msg code="a.b" />
       <AsyncDynamicPAge />
       <Loading />
       <Parent />

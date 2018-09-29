@@ -1,0 +1,7 @@
+.edition{
+      color:black;
+      visibility: hidden;
+}
+.showhim:hover .edition{
+      visibility : visible;
+}
