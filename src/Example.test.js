@@ -54,8 +54,7 @@ describe('enzyme', function () {
         const newLocal = $("#workspace").find("button");
         $(newLocal).click();
 
-        expect(handler).to.calledWith('model');;
-        expect(model.i).to.eq(1);
+        expect(handler).to.calledWith('model');
     });
 
     it('renders Parent and call handler', async () => {

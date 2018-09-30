@@ -13,7 +13,7 @@ beforeEach(function () {
     $(document.body).append('<div id="workspaceWrapper"><div id="workspace"></div></div>')
 })
 afterEach(function () {
-    $("#workspaceWrapper").empty();
+    $("#workspaceWrapper").empty().remove();
 })
 document.write('<script src="/socket.io/socket.io.js"></script>');
 document.write('<script>(function () { ' +
