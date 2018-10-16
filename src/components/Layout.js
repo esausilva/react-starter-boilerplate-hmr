@@ -11,7 +11,7 @@ const Layout = ({ children }) => {
       {children}
       <div className="divider" />
       <p className={pullRight}>
-        Made with <i className="fas  fa-heart" color="red" /> by Esau Silva
+        Made with <i className="fa  fa-heart" color="red" /> by Esau Silva
       </p>
     </div>
   );
