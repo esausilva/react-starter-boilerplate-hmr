@@ -4,6 +4,7 @@ import Loading from './Loading';
 import NoMatch from './NoMatch';
 import { Parent } from './ParentChild';
 import Msg from './Msg';
+import all from '../detectmobilebrowsers'
 
 const AsyncDynamicPAge = importedComponent(
   () => import(/* webpackChunkName:'DynamicPage' */ './DynamicPage'),
