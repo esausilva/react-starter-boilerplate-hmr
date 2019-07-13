@@ -7,10 +7,10 @@ const port = process.env.PORT || 3000;
 const config = {
   mode: 'development',
   entry: {
-    app: `${commonPaths.appEntry}/index.js`
+    app: `${commonPaths.appEntry}/index.js`,
   },
   output: {
-    filename: '[name].[hash].js'
+    filename: '[name].[hash].js',
   },
   devtool: 'inline-source-map',
   module: {
@@ -19,19 +19,19 @@ const config = {
         test: /\.css$/,
         use: [
           {
-            loader: 'style-loader'
+            loader: 'style-loader',
           },
           {
             loader: 'css-loader',
             options: {
               modules: true,
-              camelCase: true,
-              sourceMap: true
-            }
-          }
-        ]
-      }
-    ]
+              localsConvention: 'camelCase',
+              sourceMap: true,
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [new webpack.HotModuleReplacementPlugin()],
   devServer: {
@@ -39,8 +39,8 @@ const config = {
     port: port,
     historyApiFallback: true,
     hot: true,
-    open: true
-  }
+    open: true,
+  },
 };
 
 module.exports = config;

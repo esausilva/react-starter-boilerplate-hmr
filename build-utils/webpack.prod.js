@@ -6,10 +6,10 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const config = {
   mode: 'production',
   entry: {
-    app: [`${commonPaths.appEntry}/index.js`]
+    app: [`${commonPaths.appEntry}/index.js`],
   },
   output: {
-    filename: 'static/[name].[hash].js'
+    filename: 'static/[name].[hash].js',
   },
   devtool: 'source-map',
   module: {
@@ -18,29 +18,29 @@ const config = {
         test: /\.css$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader
+            loader: MiniCssExtractPlugin.loader,
           },
           {
             loader: 'css-loader',
             options: {
               modules: true,
               importLoaders: 1,
-              camelCase: true,
-              sourceMap: true
-            }
+              localsConvention: 'camelCase',
+              sourceMap: true,
+            },
           },
           {
-            loader: 'postcss-loader'
-          }
-        ]
-      }
-    ]
+            loader: 'postcss-loader',
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'styles/[name].[hash].css'
-    })
-  ]
+      filename: 'styles/[name].[hash].css',
+    }),
+  ],
 };
 
 module.exports = config;
