@@ -1,17 +1,11 @@
-import { AppContainer } from 'react-hot-loader';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/App';
+import { hot } from "react-hot-loader/root";
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./components/App";
 
-import './index.css';
+import "./index.css";
 
-const render = Component =>
-  ReactDOM.render(
-    <AppContainer>
-      <Component />
-    </AppContainer>,
-    document.getElementById('root')
-  );
+const render = (Component) =>
+  ReactDOM.render(<Component />, document.getElementById("root"));
 
-render(App);
-if (module.hot) module.hot.accept('./components/App', () => render(App));
+render(hot(App));
