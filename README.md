@@ -57,7 +57,7 @@ $ yarn build:bundleanalyzer
 
 ## Tutorial
 
-Visit my [blog entry](https://medium.freecodecamp.org/learn-webpack-for-react-a36d4cac5060) where I go step-by-step on how to build this boilerplate from scratch.
+Visit my [blog entry](https://esausilva.com/2018/01/13/learn-webpack-for-react/) where I go step-by-step on how to build this boilerplate from scratch.
 
 ## Giving Back
 
