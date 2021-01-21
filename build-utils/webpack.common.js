@@ -5,21 +5,29 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
   entry: {
-    vendor: ['semantic-ui-react']
+    vendor: ['semantic-ui-react'],
   },
   output: {
     path: commonPaths.outputPath,
-    publicPath: '/'
+    publicPath: '/',
   },
-  module: {
-    rules: [
-      {
-        test: /\.(js)$/,
-        exclude: /node_modules/,
-        use: ['babel-loader']
-      }
-    ]
-  },
+  target: 'web',
+  // module: {
+  //   rules: [
+  //     {
+  //       test: /\.(js)$/,
+  //       exclude: /node_modules/,
+  //       use: [
+  //         {
+  //           loader: 'babel-loader',
+  //           options: {
+  //             plugins: [require('react-refresh/babel')].filter(Boolean),
+  //           },
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
   optimization: {
     splitChunks: {
       cacheGroups: {
@@ -27,23 +35,23 @@ const config = {
           name: 'styles',
           test: /\.css$/,
           chunks: 'all',
-          enforce: true
+          enforce: true,
         },
         vendor: {
           chunks: 'initial',
           test: 'vendor',
           name: 'vendor',
-          enforce: true
-        }
-      }
-    }
+          enforce: true,
+        },
+      },
+    },
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: `public/index.html`,
-      favicon: `public/favicon.ico`
-    })
-  ]
+      favicon: `public/favicon.ico`,
+    }),
+  ],
 };
 
 module.exports = config;

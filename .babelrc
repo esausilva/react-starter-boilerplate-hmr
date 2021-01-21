@@ -4,8 +4,9 @@
     "@babel/preset-react"
   ],
   "plugins": [
+    // "react-refresh/babel",
     "@babel/plugin-syntax-dynamic-import",
-    "@babel/plugin-proposal-class-properties",
-    "react-hot-loader/babel"
+    "@babel/plugin-proposal-class-properties"
+    // "react-hot-loader/babel"
   ]
 }
