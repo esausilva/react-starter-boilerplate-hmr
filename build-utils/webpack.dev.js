@@ -9,7 +9,6 @@ const port = process.env.PORT || 3000;
 const config = {
   mode: 'development',
   entry: {
-    // app: [`${commonPaths.appEntry}/index.js`],
     app: [`${commonPaths.appEntry}/index.js`, 'webpack-plugin-serve/client'],
   },
   output: {
@@ -60,7 +59,6 @@ const config = {
     ],
   },
   plugins: [
-    // new webpack.HotModuleReplacementPlugin(),
     new ReactRefreshWebpackPlugin({
       overlay: { sockIntegration: 'wps' },
     }),
@@ -75,14 +73,6 @@ const config = {
     }),
   ],
   watch: true,
-  // devServer: {
-  //   host: 'localhost',
-  //   port: port,
-  //   historyApiFallback: true,
-  //   liveReload: false,
-  //   hot: true,
-  //   open: true,
-  // },
 };
 
 module.exports = config;

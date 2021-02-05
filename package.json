@@ -8,13 +8,9 @@
   "scripts": {
     "dev": "yarn prebuild && wp --env dev",
     "dev:bundleanalyzer": "yarn prebuild && yarn dev --addons bundleanalyzer",
-    "dev2": "webpack-dev-server --env=env.dev",
-    "dev:bundleanalyzer2": "yarn dev --env=addons.bundleanalyzer",
     "prebuild": "rimraf dist",
     "build": "cross-env NODE_ENV=production wp --env prod",
-    "build:bundleanalyzer": "yarn build ---addons bundleanalyzer",
-    "build2": "cross-env NODE_ENV=production webpack --env=env.prod",
-    "build:bundleanalyzer2": "yarn build --env=addons.bundleanalyzer"
+    "build:bundleanalyzer": "yarn build ---addons bundleanalyzer"
   },
   "dependencies": {
     "prop-types": "^15.7.2",
@@ -50,8 +46,6 @@
     "style-loader": "^2.0.0",
     "webpack": "^5.21.0",
     "webpack-bundle-analyzer": "^4.4.0",
-    "webpack-cli": "^4.5.0",
-    "webpack-dev-server": "4.0.0-beta.0",
     "webpack-merge": "^5.7.3",
     "webpack-nano": "^1.1.1",
     "webpack-plugin-serve": "^1.2.1"
