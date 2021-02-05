@@ -1,6 +1,5 @@
 const commonPaths = require('./common-paths');
 
-const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const config = {

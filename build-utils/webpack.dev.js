@@ -1,7 +1,6 @@
 const commonPaths = require('./common-paths');
 
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
-const webpack = require('webpack');
 
 const { WebpackPluginServe: Serve } = require('webpack-plugin-serve');
 
@@ -15,13 +14,7 @@ const config = {
   },
   output: {
     filename: '[name].[fullhash].js',
-    // hotUpdateMainFilename: '[runtime].[fullhash].hot-update.json',
   },
-  // resolve: {
-  //   alias: {
-  //     'react-dom': '@hot-loader/react-dom',
-  //   },
-  // },
   devtool: 'inline-source-map',
   module: {
     rules: [

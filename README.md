@@ -1,13 +1,13 @@
 # react-starter-boilerplate-hmr
 
-> React Starter Boilerplate with Hot Module Replacement and Webpack 4
+> React Starter Boilerplate with React Fast Refresh and Webpack 5
 
 ## Features
 
 - React 17
+- React Fast Refresh
 - React Router 5
 - Semantic UI as the CSS Framework
-- Hot Module Replacement
 - CSS Autoprefixer
 - CSS Modules with SourceMap
 - @babel/plugin-proposal-class-properties

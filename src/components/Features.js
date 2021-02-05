@@ -4,13 +4,13 @@ import { List } from 'semantic-ui-react';
 const Features = () => {
   const list = [
     'React 17',
+    'React Fast Refresh',
     'React Router 5',
     'Semantic UI as the CSS Framework',
-    'React Fast Refresh',
     'CSS Autoprefixer',
     'CSS Modules with SourceMap',
     'Stage 1 Preset',
-    'Webpack 4',
+    'Webpack 5',
     'Code splitting by Route and Vendor',
     '<a href="https://github.com/th0r/webpack-bundle-analyzer" target="_blank">Webpack Bundle Analyzer</a>',
     "Take a look at <a href='https://github.com/esausilva/react-starter-boilerplate-hmr/blob/master/package.json' target='_blank'>package.json</a>",
