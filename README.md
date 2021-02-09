@@ -2,6 +2,10 @@
 
 > React Starter Boilerplate with React Fast Refresh and Webpack 5
 
+## Tutorial
+
+**The tutorial on my blog site is the most up-to-date with this template.** Visit my [blog entry](https://esausilva.com/2018/01/13/learn-webpack-for-react/) where I go step-by-step on how to build this boilerplate from scratch.
+
 ## Features
 
 - React 17
@@ -54,10 +58,6 @@ Run on the production oprimized build
 ```
 $ yarn build:bundleanalyzer
 ```
-
-## Tutorial
-
-Visit my [blog entry](https://esausilva.com/2018/01/13/learn-webpack-for-react/) where I go step-by-step on how to build this boilerplate from scratch.
 
 ## Giving Back
 
