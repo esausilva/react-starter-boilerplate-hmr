@@ -1,7 +1,6 @@
 const commonPaths = require('./common-paths');
 
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
-
 const { WebpackPluginServe: Serve } = require('webpack-plugin-serve');
 
 const port = process.env.PORT || 3000;
@@ -44,7 +43,6 @@ const config = {
           {
             loader: 'css-loader',
             options: {
-              sourceMap: true,
               esModule: true,
               modules: {
                 compileType: 'module',
