@@ -35,9 +35,6 @@ const config = {
             loader: 'style-loader',
             options: {
               esModule: true,
-              modules: {
-                namedExport: true,
-              },
             },
           },
           {
@@ -45,7 +42,6 @@ const config = {
             options: {
               esModule: true,
               modules: {
-                compileType: 'module',
                 mode: 'local',
                 exportLocalsConvention: 'camelCaseOnly',
                 namedExport: true,

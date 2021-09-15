@@ -25,9 +25,6 @@ const config = {
             loader: MiniCssExtractPlugin.loader,
             options: {
               esModule: true,
-              modules: {
-                namedExport: true,
-              },
             },
           },
           {
@@ -37,7 +34,6 @@ const config = {
               sourceMap: true,
               esModule: true,
               modules: {
-                compileType: 'module',
                 mode: 'local',
                 exportLocalsConvention: 'camelCaseOnly',
                 namedExport: true,
